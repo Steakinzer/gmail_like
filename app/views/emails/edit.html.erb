@@ -1,0 +1,8 @@
+<div>
+  <h1 class="font-bold text-2xl mb-3">Editer le contenu du mail</h1>
+
+  <div id="<%= dom_id @email %>">
+    <%= render "form", email: @email %>
+    <%= link_to "Never Mind", emails_path, class: "btn mb-3 bg-gray-100" %>
+  </div>
+</div>

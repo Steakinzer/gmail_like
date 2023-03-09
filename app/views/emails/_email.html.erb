@@ -1,0 +1,8 @@
+<div class="block mb-2">
+  <%= "Contenu : " + email.content + " Expéditeur " + email.sender %>
+  <br>
+  <div>
+  <%= link_to "Edit", edit_email_path(email), class: "btn bg-gray-100" %>
+  <%= button_to "Delete", email_path(email), method: :delete, class: "btn bg-red-100" %>
+  </div>
+</div>
