@@ -1,8 +1,9 @@
 
-  <div class="flex items-center justify-between w-6/12">
+  <div class="flex items-center justify-between">
     <p class="text-red-800 pr-8"><%=" Expéditeur " + email.sender %></p>
     <turbo-frame id="<%= dom_id email %>" class="block">
-    <%= link_to "Ouvrir le mail", email_path(email), class: "btn bg-gray-100" %>
+    <%= link_to "Ouvrir le mail", email_path(email), class: "btn bg-sky-500 hover:bg-sky-700 ... text-white boutton" %>
+    <p></p>
     </turbo-frame>
   </div> 
 
