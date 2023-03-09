@@ -1,8 +1,8 @@
-<div class="block mb-2">
-  <%= "Contenu : " + email.content + " Expéditeur " + email.sender %>
-  <br>
-  <div>
-  <%= link_to "Edit", edit_email_path(email), class: "btn bg-gray-100" %>
-  <%= button_to "Delete", email_path(email), method: :delete, class: "btn bg-red-100" %>
-  </div>
-</div>
+
+  <div class="flex items-center justify-between w-6/12">
+    <p class="text-red-800 pr-8"><%=" Expéditeur " + email.sender %></p>
+    <turbo-frame id="<%= dom_id email %>" class="block">
+    <%= link_to "Ouvrir le mail", email_path(email), class: "btn bg-gray-100" %>
+    </turbo-frame>
+  </div> 
+

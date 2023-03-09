@@ -1,11 +1,12 @@
 class EmailsController < ApplicationController
   def index
     @emails = Email.all
+    @previews = Email.all
     @email = Email.new
   end
 
   def create
-    @email = Email.new(sender: Faker::Internet.email, content:Faker::Lorem.sentence)
+    @email = Email.new(sender: Faker::Internet.email, content: Faker::Lorem.sentence(word_count: 25))
 
     respond_to do |format|
       if @email.save
@@ -16,6 +17,10 @@ class EmailsController < ApplicationController
     end
   end
 
+  def show
+    @email = Email.find(params[:id])
+  end
+
   def edit
     @email = Email.find(params[:id])
   end
@@ -23,7 +28,7 @@ class EmailsController < ApplicationController
   def update
     @email = Email.find(params[:id])
     respond_to do |format|
-      if @email.update(sender: Faker::Internet.email, content:Faker::Lorem.sentence)
+      if @email.update(sender: Faker::Internet.email, content: Faker::Lorem.sentence(word_count: 25))
         format.html { redirect_to emails_url, notice: "Task was successfully updated" }
       else
         format.html { render :edit, status: :unprocessable_entity }

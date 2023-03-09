@@ -1,0 +1,8 @@
+<div class="block mb-2">
+  <p class ="italic text-xl"><%=" Expéditeur :" + email.sender %></p>
+  <p class="text-xm"><%= email.content%></p>
+  <br>
+  <div> 
+  <%= button_to "Delete", email_path(email), method: :delete, data: { "turbo-frame": "_top" },class: "btn bg-red-100" %>
+  </div>
+</div>
